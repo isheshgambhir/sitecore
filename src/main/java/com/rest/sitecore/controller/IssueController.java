@@ -67,6 +67,7 @@ public class IssueController {
     public ResponseEntity<Issue> deleteIssue(@PathVariable(value = "id") Long id) {
         Optional<Issue> existingIssue = issueRepository.findById(id);
         if (existingIssue.isPresent()) {
+            issueRepository.delete(existingIssue.get());
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
