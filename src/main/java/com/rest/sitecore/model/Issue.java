@@ -29,4 +29,8 @@ public class Issue {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
